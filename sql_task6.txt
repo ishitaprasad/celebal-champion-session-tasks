@@ -1,0 +1,24 @@
+with nums as (
+    select 0 as curr, 1 as next, 1 as n
+    union all
+    select next, curr + next, n + 1 
+    from nums 
+    where n < 10
+)
+select curr from nums;
+
+Output:
+
+276 ms
+curr       
+-----------
+          0
+          1
+          1
+          2
+          3
+          5
+          8
+         13
+         21
+         34
