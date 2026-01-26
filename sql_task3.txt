@@ -1,0 +1,9 @@
+mysql> select department, max(salary) as second_max_salary from employee a where salary < (select max(salary) from employee b where a.department = b.department) group by department;
++------------+-------------------+
+| department | second_max_salary |
++------------+-------------------+
+| it         |             85000 |
+| hr         |             60000 |
+| sales      |             80000 |
++------------+-------------------+
+3 rows in set (0.00 sec)
