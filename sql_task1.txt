@@ -1,0 +1,21 @@
+mysql> select * from emails;
++--------------------------------+
+| email                          |
++--------------------------------+
+| Ashwin.mali@gmail.com          |
+| ashwin.@gmail.com              |
+| ashwin@gmail.com               |
+| Ashwin.mali@celebbaltech.co.in |
++--------------------------------+
+4 rows in set (0.13 sec)
+
+mysql> select substring_index(substring_index(email, '@', 1), '.', 1) as firstname, if(email like '%.%@%', substring_index(substring_index(email, '@', 1), '.', -1), null) as lastname, substring_index(substring_index(email, '@', -1), '.', 1) as comp from emails;
++-----------+----------+--------------+
+| firstname | lastname | comp         |
++-----------+----------+--------------+
+| Ashwin    | mali     | gmail        |
+| ashwin    |          | gmail        |
+| ashwin    | NULL     | gmail        |
+| Ashwin    | mali     | celebbaltech |
++-----------+----------+--------------+
+4 rows in set (0.00 sec)
