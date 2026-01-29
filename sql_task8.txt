@@ -1,0 +1,21 @@
+mysql> select * from strings;
++--------+
+| string |
++--------+
+| aaab   |
+| aba    |
+| aaaa   |
+| bbbb   |
++--------+
+4 rows in set (0.03 sec)
+
+mysql> select char_length(string)-char_length(replace(string,'a','')) as count from strings;
++-------+
+| count |
++-------+
+|     3 |
+|     2 |
+|     4 |
+|     0 |
++-------+
+4 rows in set (0.01 sec)
