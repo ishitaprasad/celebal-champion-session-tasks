@@ -1,0 +1,9 @@
+mysql> SELECT TIMESTAMPDIFF(YEAR, '2024-03-24', CURDATE()) as age;
++------+
+| age  |
++------+
+|    1 |
++------+
+1 row in set (0.00 sec)
+
+mysql>
