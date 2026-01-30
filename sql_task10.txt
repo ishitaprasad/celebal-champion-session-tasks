@@ -1,0 +1,1 @@
+mysql> select char_length(string)-char_length(replace(string,'a','')) as count from strings;
